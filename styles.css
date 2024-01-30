@@ -1,0 +1,606 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: url(https://img.freepik.com/vecteurs-libre/fond-hexagonal-fonce-degrade-couleur_79603-1410.jpg);
+}
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/*-----------------------------------------------------------------Commun------------------------------------------------------ */
+
+/*Banniere*/
+
+.banniere {
+    width: 100%;
+    height: 40%;
+    align-items: center;
+    position: relative;
+}
+.image-banniere {
+    width: 100%;
+    height: 100%;
+    filter: blur(2px);
+    position: relative;
+    overflow: hidden;
+}
+.titre-banniere {
+    width: 50%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+/* bandeau navigation */
+nav {
+    width: 100%-10px;
+    height: auto;
+    justify-content: center;
+    background-color: #333;
+    border: 10px solid transparent;
+    border-color: white;
+    border-image: url('PHOTO/border.webp') 17 repeat;
+}
+.ul-navigation {
+    list-style-type: none;
+    margin: 0%;
+    padding: 0%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.li-navigation {
+    margin: 0%;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+.li-navigation a {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 50px;
+    display: block;
+}
+.li-navigation a:hover {
+    background-color: #111;
+}
+@media screen and (max-width: 768px) {
+
+    .ul-navigation {
+        flex-direction: column;
+        text-align: center; 
+    }
+    .li-navigation {
+        border: none;
+        margin: 0;
+    }
+    .li-navigation a {
+        padding: 15px 0; 
+        border-bottom: 1px solid white;
+    }
+}
+
+/* bandeau des classes */
+section {
+    width: 100%;
+    height: auto;
+}
+.ul-classe {
+    list-style-type: none;
+    margin: 0%;
+    padding: 0%;
+    overflow: hidden;
+    display: flex;
+}
+.li-classe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    width: 100px;
+    margin: 0px;
+    box-sizing: border-box;
+    background-color: #333;
+    border: 5px solid transparent;
+    border-color: white;
+    border-image: url('PHOTO/border.webp') 17 repeat;
+}
+.li-classe:hover {
+    background-color: #111;
+}
+.text-classe {
+    font-size: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    padding: 10px 10px;
+}
+.image-classe {
+    width: 100%;
+}
+@media screen and (max-width: 1200px) {
+  
+    .ul-classe {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .li-classe {
+        border: none;
+        margin: 0;
+        border: 5px solid transparent;
+        border-color: white;
+        border-image: url('PHOTO/border.webp') 17 repeat;
+    }  
+}
+
+/* Global page */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    background: url(https://img.freepik.com/vecteurs-libre/fond-hexagonal-fonce-degrade-couleur_79603-1410.jpg);
+    border: 17px solid transparent;
+    border-color: white;
+    border-image: url('PHOTO/border.webp') 17 repeat;
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.contact-block {
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.ligne {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: 1.4;
+}
+.contact a img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.2s ease-in-out;
+}
+.contact a:hover img {
+    transform: scale(1.2);
+}
+.contact-logo {
+    display: inline-block;
+    margin: 20px;
+}
+.contact-logo a img {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.2s ease-in-out;
+}
+.contact-logo a:hover img {
+    transform: scale(1.2);
+}
+.contact-logo p {
+    margin-top: 10px;
+}
+.police-arial {
+    font-family: Arial;
+}
+
+/* -----------------------------------------------------------------------Page accueil -------------------------------------------------------------------*/
+
+.titre-index {
+    list-style: none;
+    padding: 0;
+    margin: 50px auto;
+    width: 50%;
+}
+h1 {
+    margin: 10px 0;
+    padding: 5px 10px;
+    color: white;
+    background-color: #333;
+    border: 10px solid transparent;
+    border-color: white;
+    border-image: url('PHOTO/border.webp') 17 repeat;
+    text-align: center;
+    font-size: 30px;
+}
+h3 {
+    font-size: 20px;
+    color: white;
+}
+.ul-presentation {
+    background-color: black;
+    list-style: none;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid goldenrod;
+    border-radius: 10px;
+    max-width: 400px;
+    min-width: 400px;
+    width: 100%;
+    height: 1450px;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.image-top{ 
+    width: 100%;
+    height: auto;
+    margin-top: 25px;
+    margin-bottom: 0;
+
+}
+.ul-rareté {
+    background-color: black;
+    list-style: none;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid goldenrod;
+    border-radius: 10px;
+    max-width: 400px;
+    min-width: 400px;
+    width: 100%;
+    height: 134px;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.li-rareté {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgrey;
+    border: 2px solid goldenrod;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 0;
+    width: 100px;
+}
+.image-rareté {
+    width: 25%;
+    height: auto; 
+    text-align: center;
+}
+.ul-rang {
+    background-color: black;
+    list-style: none;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid goldenrod;
+    border-radius: 10px;
+    max-width: 400px;
+    min-width: 400px;
+    width: 100%;
+    height: 400px;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.li-titre {
+    margin: 10px 0;
+    padding: 5px 10px;
+    background-color: #333;
+    border: 2px solid goldenrod;
+    border-radius: 5px;
+    text-align: center;
+    align-items: center;
+}
+.li-texte {
+    margin: 10px 0;
+    padding: 0px 10px;
+    background-color: lightgrey;
+    border: 2px solid goldenrod;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+.image-rang {
+    width: 10%;
+    height: auto;
+    margin-right: 25px;
+}
+.ul-liste {
+    background-color: black;
+    list-style: none;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid goldenrod;
+    border-radius: 10px;
+    max-width: 400px;
+    min-width: 400px;
+    width: 100%;
+    height: 240px;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    align-items: center;
+}
+.ul-liste2 {
+    background-color: black;
+    list-style: none;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid goldenrod;
+    border-radius: 10px;
+    max-width: 400px;
+    min-width: 400px;
+    width: 100%;
+    height: 880px;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    align-items: center;
+}
+colonne{
+    display: flex;
+    align-items: center;
+}
+.li-photo {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgrey;
+    border: 1px solid goldenrod;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 0;
+}
+.photo-home {
+    width: 80%;
+    height: auto; 
+    text-align: center;
+}
+
+/* -----------------------------------------------------------------------Page cartes -------------------------------------------------------------------*/
+h4 {
+    margin: 50px auto;
+    padding-top: 20px;
+    color: white;
+    background-color: black;
+    border: 10px solid transparent;
+    border-color: white;
+    border-image: url('PHOTO/border.webp') 17 repeat;
+    text-align: center;
+    font-size: 15px;
+    list-style: none;
+    width: 50%;
+}
+/* Ajout de styles pour le formulaire */
+.search-box {
+    display: flex;
+    margin: 20px auto;
+    width: 30px;
+    justify-content: center;
+    
+}
+input[type="text"] {
+    padding: 8px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    height: 40px;
+    box-sizing: border-box;
+}
+.search-button {
+    padding: 10px 15px;
+    background-color: white;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    height: 40px;
+}
+.search-button img {
+    width: 20px;
+    height: 20px;
+}
+.search-button:hover {
+    background-color: #333;
+    border: 1px solid #CCC;
+}
+.search-button img:hover {
+    width: 20px;
+    height: 20px;
+    filter: invert(100%);
+}
+/* Ajout de styles pour l'affichage des cartes */
+.card {
+    background: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 17px solid transparent;
+    border-color: white;
+    border-image: url('PHOTO/border.webp') 17 repeat;
+}
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.card h2 {
+    color: #333;
+}
+.card p {
+    color: #666;
+}
+.card .flavor-text {
+    font-style: italic;
+    color: #888;
+}
+
+/* -----------------------------------------------------------------------Page allcards et battlegrounds-------------------------------------------------------------------*/
+
+/* Ajout de styles pour le formulaire */
+form {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: black;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si l'espace est insuffisant */
+    justify-content: space-between; /* Répartit les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    text-align: left; /* Alignement du texte à gauche */
+}
+h5 {
+    font-size: 15px;
+    color: white;
+}
+h6 {
+    margin: 0px auto;
+    padding-top: 5px;
+    color: white;
+    background-color: #333;
+    border: 10px solid transparent;
+    border-color: white;
+    border-image: url('PHOTO/border.webp') 17 repeat;
+    text-align: center;
+    font-size: 15px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    width: 150%;
+}
+.mise-en-form{
+    margin: 10px 0px;
+    padding: 0px 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 400px;
+}
+label, input[type="text"], button {
+    flex: 0 0 calc(50% - 10px); /* Calcul de la largeur pour deux éléments en ligne avec un espace de 20px entre eux */
+}
+label {
+    margin-bottom: 8px;
+}
+.filter-button {  
+    background-color: goldenrod;
+    color: black;
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 15px auto ;
+    padding: 10px 10px;
+    height: 40px;
+    width: 285px;
+}
+.filter-button:hover {
+    background-color: #333;
+    color: goldenrod;
+    border: 1px solid goldenrod;
+}
+.selected-filter-button {
+    background-color: #28a745;
+}
+
+#cartesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+.cards {
+    margin: 10px;
+    padding: 10px;
+    border-color: #fff;
+    width: calc(15% - 10px); /* 20% of the container width with margin */
+    box-sizing: border-box; /* Include padding and border in the width */
+    text-align: center;
+    overflow: hidden; /* Pour cacher les éléments qui débordent */
+    position: relative; /* Position relative pour positionner le pseudo-élément absolu */
+}
+.cards img {
+    max-width: 100%;
+    height: auto;
+    width: 100%; /* Définir la largeur de l'image à 100% pour qu'elles aient toutes la même taille */
+    transition: transform 0.3s ease-in-out; /* Ajouter une transition à la propriété transform */
+}
+.cards:hover img {
+    transform: scale(1.2); /* Appliquer une échelle de 1.2 (agrandir) sur survol */
+}
+
+/* -----------------------------------------------------------------------Page Battlegrounds -------------------------------------------------------------------*/
+
+.battlegrounds{
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: black;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si l'espace est insuffisant */
+    justify-content: space-between; /* Répartit les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    text-align: left; /* Alignement du texte à gauche */
+}
+.filter-button2 {
+    
+    background-color: goldenrod;
+    color: black;
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 15px auto ;
+    padding: 10px 10px;
+    height: 40px;
+}
+.filter-button2:hover {
+    background-color: #333;
+    color: goldenrod;
+    border: 1px solid goldenrod;
+}
+/* -----------------------------------------------------------------------Page bdd -------------------------------------------------------------------*/
+.white-text-table {
+    color: white;
+    background-color: black;
+    border: 10px solid transparent;
+    border-color: white;
+    border-image: url('PHOTO/border.webp') 17 repeat;
+    text-align: center;
+    align-items: center;
+}

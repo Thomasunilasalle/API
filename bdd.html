@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEARTHSTONE API</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!--Banniere-->
+    <div class="banniere" ;>
+        <img class="image-banniere" src="PHOTO/fond.jpg">
+        <img class="titre-banniere" src="PHOTO/titre.png">
+    </div>
+
+    <!--Bandeau navigation-->
+    <nav>
+        <ul class="ul-navigation">
+            <li class="li-navigation"><a href="index.html" id="info">Info</a></li>
+            <li class="li-navigation"><a href="allcards.html" id="allcards">Catalogue cartes</a></li>
+            <li class="li-navigation"><a href="battlegrounds.html" id="battlegrounds">Battlegrounds</a></li>
+            <li class="li-navigation"><a href="bdd.html" id="bdd">Données</a></li>
+        </ul>
+    </nav> 
+
+    <!-- Ajout du script JavaScript pour communiquer avec le fichier PHP -->
+
+   <script >
+        // Fonction pour charger les données depuis le fichier PHP
+        function loadData() {
+            // Création d'une requête HTTP
+            var xhttp = new XMLHttpRequest();
+
+            // Définition de la fonction de rappel
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    // Mise à jour du contenu HTML avec les données reçues du PHP
+                    document.getElementById("userData").innerHTML = this.responseText;
+                }
+            };
+
+            // Spécification de la méthode HTTP et de l'URL du fichier PHP
+            xhttp.open("GET", "bdd.php", true);
+
+            // Envoi de la requête
+            xhttp.send();
+        }
+
+        // Appel de la fonction loadData au chargement de la page
+        window.onload = loadData;
+    </script>
+
+    <!-- Ajout d'une balise div pour afficher les données -->
+    <div id="userData"></div>
+
+    <!--Bas de page-->
+    <footer class="police-arial">
+        <div class="contact-block">
+            <div class="contact-logo">
+                <a href="https://www.instagram.com/HearthstoneAPI">
+                    <img src="Commun/insta.png">
+                </a>
+            </div>
+            <div class="contact-logo">
+                <a href="https://www.snapchat.com/HearthstoneAPI">
+                    <img src="Commun/snap.png">
+                </a>
+            </div>
+            <div class="contact-logo">
+                <a href="https://www.facebook.com/HearthstoneAPI">
+                    <img src="Commun/facebook.png">
+                </a>
+            </div>
+            <div class="contact-logo">
+                <a href="https://www.twitter.com/HearthstoneAPI">
+                    <img src="Commun/twitter.png">
+                </a>
+            </div>
+            <div class="contact">
+                <p1>©HearthstoneAPI</p1>
+            </div>
+        </div>
+    </footer>
+
+  
+</body>
+</html>

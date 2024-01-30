@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hearthstone Card Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>var totalPages = 0;</script>
+</head>
+
+<body>
+    <!--Banniere-->
+    <div class="banniere";>
+        <img class="image-banniere" src="PHOTO/fond.jpg">
+        <img class="titre-banniere" src="PHOTO/titre.png">
+    </div>
+    
+    <header>
+        <h1>Informations de l'API Hearthstone</h1>
+        <!-- Menu horizontal -->
+        <nav>
+            <ul class="ul-navigation">
+                <li class="li-navigation"><a href="index.html" id="info">Info</a></li>
+                <li class="li-navigation"><a href="allcards.html" id="allcards">Catalogue cartes</a></li>
+                <li class="li-navigation"><a href="battlegrounds.html" id="battlegrounds">Battlegrounds</a></li>
+                <li class="li-navigation"><a href="bdd.html" id="bdd">Données</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h4>
+        <div class="battlegrounds" id="filterContainer">
+            <!-- Formulaire pour le filtre de niveau -->
+            <h6>
+                <label for="tierFilter"><h5>Tier:</h5></label>
+                <select id="tierFilter" name="tier">
+                    <option value="">Tous</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </h6>
+
+            <!-- Formulaire pour le filtre d'attaque -->
+            <h6>
+                <label for="attack"><h5>Filtrer par points d'attaque :</h5></label>
+                <input type="number" name="attack" id="attack" placeholder="Entrez la valeur d'attaque">
+            </h6>
+
+            <!-- Formulaire pour le filtre de santé -->
+            <h6>
+                <label for="health"><h5>Filtrer par points de vie :</h5></label>
+                <input type="number" name="health" id="health" placeholder="Entrez la valeur de santé">
+            </h6>
+
+            <!-- bouton pour le filtre -->
+            <button class="filter-button2" onclick="filterCards()">Filtrer</button>
+        </div>
+    </h4>
+
+    <!-- Container pour afficher les cartes -->
+    <div class="card" id="cartesContainer"></div>
+    <div class="pagination" id="paginationContainer"></div>
+
+    <script>
+        function filterCards(page = 1) {
+            // Récupérez les valeurs sélectionnées dans les filtres
+            var selectedTier = document.getElementById("tierFilter").value;
+            var selectedAttack = document.getElementById("attack").value;
+            var selectedHealth = document.getElementById("health").value;
+
+            // Utilisez fetch pour obtenir les données filtrées
+            fetch('battlegrounds.php?page=' + page + '&tier=' + selectedTier + '&attack=' + selectedAttack + '&health=' + selectedHealth)
+                .then(response => response.text())
+                .then(data => {
+                    // Injectez le contenu HTML récupéré dans la div 'cartesContainer'
+                    document.getElementById('cartesContainer').innerHTML = data;
+                    // Mettez à jour les liens de pagination en fonction de la page actuelle
+                    updatePagination(page);
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        // Fonction pour mettre à jour les liens de pagination
+        function updatePagination(currentPage) {
+            // Construisez les liens de pagination
+            var paginationHTML = '<div class="pagination">';
+            for (var page = 1; page <= totalPages; page++) {
+                paginationHTML += '<a href="javascript:void(0);" onclick="filterCards(' + page + ')"';
+                if (page === currentPage) {
+                    paginationHTML += ' class="active"';
+                }
+                paginationHTML += '>Page ' + page + '</a> ';
+            }
+            paginationHTML += '</div>';
+
+            // Injectez le contenu HTML de la pagination dans la div 'paginationContainer'
+            document.getElementById('paginationContainer').innerHTML = paginationHTML;
+        }
+
+        // Utilisez JavaScript pour récupérer les informations de carte de votre script PHP au chargement de la page
+        document.addEventListener('DOMContentLoaded', function () {
+            filterCards();
+        });
+    </script>
+
+    <!--Bas de page-->
+    <footer class="police-arial">
+        <div class="contact-block">
+            <div class="contact-logo">
+                <a href="https://www.instagram.com/HearthstoneAPI">
+                    <img src="Commun/insta.png">
+                </a>
+            </div>
+            <div class="contact-logo">
+                <a href="https://www.snapchat.com/HearthstoneAPI">
+                    <img src="Commun/snap.png">
+                </a>
+            </div>
+            <div class="contact-logo">
+                <a href="https://www.facebook.com/HearthstoneAPI">
+                    <img src="Commun/facebook.png">
+                </a>
+            </div>
+            <div class="contact-logo">
+                <a href="https://www.twitter.com/HearthstoneAPI">
+                    <img src="Commun/twitter.png">
+                </a>
+            </div>
+            <div class="contact">
+                <p1>©HearthstoneAPI</p1>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

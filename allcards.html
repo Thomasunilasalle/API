@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEARTHSTONE API</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!--Banniere-->
+    <div class="banniere";>
+        <img class="image-banniere" src="PHOTO/fond.jpg">
+        <img class="titre-banniere" src="PHOTO/titre.png">
+    </div>
+
+    <!--Bandeau navigation-->
+    <nav>
+        <ul class="ul-navigation">
+            <li class="li-navigation"><a href="index.html" id="info">Info</a></li>
+            <li class="li-navigation"><a href="allcards.html" id="allcards">Catalogue cartes</a></li>
+            <li class="li-navigation"><a href="battlegrounds.html" id="battlegrounds">Battlegrounds</a></li>
+            <li class="li-navigation"><a href="bdd.html" id="bdd">Données</a></li>
+        </ul>
+    </nav>
+
+    <!--PAGE-->
+    <h4><form onsubmit="return getAllCards()">
+        <!-- Formulaire pour le filtre de texte -->
+        <h6><label for="textFilter"><h5>Filtrer par texte :</h5></label>
+            <input type="text" name="textFilter" id="textFilter" placeholder="Entrez le texte de filtre">
+        </h6>
+    
+        <!-- Formulaire de classe -->
+        <h6><label for="class"><h5>Filtrer par classe :</h5></label>
+        <select name="class" id="class">
+            <option value="" selected>Toutes les classes</option>
+            <option value="deathknight">Chevalier de la mort</option>
+            <option value="druid">Druide</option>
+            <option value="hunter">Chasseur</option>
+            <option value="mage">Mage</option>
+            <option value="paladin">Paladin</option>
+            <option value="priest">Pretre</option>
+            <option value="rogue">Voleur</option>
+            <option value="shaman">Chaman</option>
+            <option value="warlock">Demoniste</option>
+            <option value="warrior">Guerrier</option>
+            <option value="demonhunter">Chasseur de demons</option>
+            <option value="neutral">Neutre</option>
+        </select></h6>
+
+        <!-- Formulaire pour le coût en mana -->
+        <h6><label for="manaCost"><h5>Filtrer par coût en mana :</h5></label>
+        <select name="manaCost" id="manaCost">
+            <option value="" selected>Tout</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10 et plus</option>
+        </select></h6>
+
+        <!-- Formulaire pour le tri par set -->
+        <h6><label for="set"><h5>Trier par set :</h5></label>
+        <select name="set" id="set">
+            <option value="" selected>Tous les sets</option>
+            <option value="showdown-in-the-badlands">Rixe en terres Ingrates</option>
+            <option value="titans">TITANS</option>
+            <option value="festival-of-legends">La fête des légendes</option>
+            <option value="caverns-of-time">Grottes du Temps</option>
+            <option value="march-of-the-lich-king">La marche du roi-liche</option>
+            <option value="path-of-arthas">Voie d’Arthas</option>
+            <option value="murder-at-castle-nathria">Meurtre au château Nathria+</option>
+            <option value="classic-cards">Cartes classiques</option>
+            <option value="voyage-to-the-sunken-city">Au cœur de la cité engloutie</option>
+            <option value="fractured-in-alterac-valley">Divisés dans la vallée d’Alterac</option>
+            <option value="united-in-stormwind">Unis à Hurlevent</option>
+            <option value="forged-in-the-barrens">Forgés dans les Tarides</option>
+            <option value="madness-at-the-darkmoon-faire">Folle journée à Sombrelune</option>
+            <option value="scholomance-academy">L’Académie Scholomance</option>
+            <option value="ashes-of-outland">Les Cendres de l’Outreterre</option>
+            <option value="demonhunter-initiate">Initié chasseur de démons</option>
+            <option value="galakronds-awakening">Le Réveil de Galakrond</option>
+            <option value="descent-of-dragons">L’Envol des Dragons</option>
+            <option value="saviors-of-uldum">Les Aventuriers d’Uldum</option>
+            <option value="rise-of-shadows">Éveil des ombres</option>
+            <option value="rastakhans-rumble">Les Jeux de Rastakhan</option>
+            <option value="the-boomsday-project">Projet Armageboum</option>
+            <option value="the-witchwood">Le Bois Maudit</option>
+            <option value="kobolds-and-catacombs">Kobolds et Catacombes</option>
+            <option value="knights-of-the-frozen-throne">Chevaliers du Trône de glace</option>
+            <option value="journey-to-ungoro">Voyage au centre d’Un’Goro</option>
+            <option value="mean-streets-of-gadgetzan">Main basse sur Gadgetzan</option>
+            <option value="one-night-in-karazhan">Une nuit à Karazhan</option>
+            <option value="whispers-of-the-old-gods">Les murmures des Dieux très anciens</option>
+            <option value="league-of-explorers">Ligue des explorateurs</option>
+            <option value="the-grand-tournament">Le Grand Tournoi</option>
+            <option value="blackrock-mountain">Mont Rochenoire</option>
+            <option value="goblins-vs-gnomes">Gobelins et Gnomes</option>
+            <option value="naxxramas">La malédiction de Naxxramas</option>
+            <option value="legacy">Héritage</option>
+            <option value="core">Fondamental</option>
+        </select></h6>
+
+        <!-- Formulaire pour le filtre d'attaque -->
+        <h6><label for="attack"><h5>Filtrer par points d'attaque :</h5></label>
+        <input type="number" name="attack" id="attack" placeholder="Entrez la valeur d'attaque"></h6>
+
+        <!-- Formulaire pour le filtre de santé -->
+        <h6><label for="health"><h5>Filtrer par points de vie :</h5></label>
+        <input type="number" name="health" id="health" placeholder="Entrez la valeur de santé"></h6>
+
+        <!-- Formulaire pour le filtre de rareté -->
+        <h6><label for="rarity"><h5>Filtrer par rareté :</h5></label>
+        <select name="rarity" id="rarity">
+            <option value="" selected>Toutes les raretés</option>
+            <option value="common">Commune</option>
+            <option value="rare">Rare</option>
+            <option value="epic">Épique</option>
+            <option value="legendary">Légendaire</option>
+        </select></h6>
+
+        <!-- Formulaire pour le filtre de type de serviteur -->
+        <h6><label for="minionType"><h5>Filtrer par type de serviteur :</h5></label>
+        <select name="minionType" id="minionType">
+            <option value="" selected>Tous les types</option>
+            <option value="beast">Bête</option>
+            <option value="demon">Démon</option>
+            <option value="dragon">Dragon</option>
+            <option value="mech">Mech</option>
+            <option value="murloc">Murloc</option>
+            <option value="pirate">Pirate</option>
+            <option value="totem">Totem</option>
+        </select></h6>
+
+        <!-- Formulaire pour le filtre d'école de sort -->
+        <h6><label for="spellSchool"><h5>Filtrer par école de sort :</h5></label>
+        <select name="spellSchool" id="spellSchool">
+            <option value="" selected>Toutes les écoles de sort</option>
+            <option value="arcane">Arcanes</option>
+            <option value="fire">Feu</option>
+            <option value="frost">Givre</option>
+            <option value="nature">Nature</option>
+            <option value="holy">Sacré</option>
+            <option value="shadow">Ombre</option>
+            <option value="fel">Fiel</option>
+        </select></h6>
+
+        <!-- boutton pour le filtre -->
+        <input class="filter-button" type="submit" value="Filtrer">
+    </form></h4>
+
+    <!-- Container pour afficher les cartes -->
+    <div class="card" id="cartesContainer"></div>
+
+
+    <script>
+        // Fonction pour effectuer une requête AJAX vers le script PHP
+        function getAllCards() {
+            var selectedClassId = document.getElementById("class").value;
+            var selectedManaCost = document.getElementById("manaCost").value;
+            var selectedSet = document.getElementById("set").value;
+            var selectedAttack = document.getElementById("attack").value;
+            var selectedHealth = document.getElementById("health").value;
+            var selectedRarity = document.getElementById("rarity").value;
+            var selectedMinionType = document.getElementById("minionType").value;
+            var selectedSpellSchool = document.getElementById("spellSchool").value;
+            var selectedTextFilter = document.getElementById("textFilter").value;
+    
+            // Validation côté client
+            if (selectedAttack < 0 || selectedHealth < 0) {
+                alert("Veuillez saisir des valeurs numériques égales ou supérieures à 0 pour Attack et Health.");
+                return false;
+            }
+    
+            // Construire l'URL avec les paramètres du formulaire
+            var queryString = 'class=' + selectedClassId + '&manaCost=' + selectedManaCost + '&set=' + selectedSet + '&attack=' + selectedAttack + '&health=' + selectedHealth + '&rarity=' + selectedRarity + '&minionType=' + selectedMinionType + '&spellSchool=' + selectedSpellSchool + '&textFilter=' + selectedTextFilter;
+    
+            // Afficher la requête dans la console du navigateur
+            console.log('Requête envoyée : allcards.php?' + queryString);
+    
+            // Effectuer la requête AJAX
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    // Mettez le résultat dans le conteneur prévu
+                    document.getElementById("cartesContainer").innerHTML = this.responseText;
+                }
+            };
+    
+            // Remplacez "allcards.php" par le chemin correct vers votre script PHP
+            xhttp.open("GET", "allcards.php?" + queryString, true);
+            xhttp.send();
+    
+            // Empêcher le rechargement de la page
+            return false;
+        }
+    
+        // Appeler la fonction au chargement de la page
+        window.onload = function () {
+            getAllCards(); // Appel initial pour afficher toutes les cartes au chargement de la page
+        };
+    
+        // Ajoutez cette fonction pour appeler getAllCards() lorsqu'un lien de pagination est cliqué
+        function changePage(page) {
+    var selectedClassId = document.getElementById("class").value;
+    var selectedManaCost = document.getElementById("manaCost").value;
+    var selectedSet = document.getElementById("set").value;
+    var selectedAttack = document.getElementById("attack").value;
+    var selectedHealth = document.getElementById("health").value;
+    var selectedRarity = document.getElementById("rarity").value;
+    var selectedMinionType = document.getElementById("minionType").value;
+    var selectedSpellSchool = document.getElementById("spellSchool").value;
+    var selectedTextFilter = document.getElementById("textFilter").value;
+
+    // Validation côté client
+    if (selectedAttack < 0 || selectedHealth < 0) {
+        alert("Veuillez saisir des valeurs numériques égales ou supérieures à 0 pour Attack et Health.");
+        return false;
+    }
+
+    // Construire l'URL avec les paramètres du formulaire et la nouvelle page
+    var queryString = 'class=' + selectedClassId + '&manaCost=' + selectedManaCost + '&set=' + selectedSet + '&attack=' + selectedAttack + '&health=' + selectedHealth + '&rarity=' + selectedRarity + '&minionType=' + selectedMinionType + '&spellSchool=' + selectedSpellSchool + '&textFilter=' + selectedTextFilter + '&page=' + page;
+
+    // Afficher la requête dans la console du navigateur
+    console.log('Requête envoyée : allcards.php?' + queryString);
+
+    // Effectuer la requête AJAX
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            // Mettez le résultat dans le conteneur prévu
+            document.getElementById("cartesContainer").innerHTML = this.responseText;
+        }
+    };
+
+    // Remplacez "allcards.php" par le chemin correct vers votre script PHP
+    xhttp.open("GET", "allcards.php?" + queryString, true);
+    xhttp.send();
+
+    // Empêcher le rechargement de la page
+    return false;
+}
+    </script>
+
+
+    <!--Bas de page-->
+    <footer class="police-arial">
+        <div class="contact-block">
+            <div class="contact-logo">
+                <a href="https://www.instagram.com/HearthstoneAPI">
+                    <img src="Commun/insta.png">
+                </a>
+            </div>
+            <div class="contact-logo">
+                <a href="https://www.snapchat.com/HearthstoneAPI">
+                    <img src="Commun/snap.png">
+                </a>
+            </div>
+            <div class="contact-logo">
+                <a href="https://www.facebook.com/HearthstoneAPI">
+                    <img src="Commun/facebook.png">
+                </a>
+            </div>
+            <div class="contact-logo">
+                <a href="https://www.twitter.com/HearthstoneAPI">
+                    <img src="Commun/twitter.png">
+                </a>
+            </div>
+            <div class="contact">
+                <p1>©HearthstoneAPI</p1>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

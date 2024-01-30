@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEARTHSTONE API</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!--Banniere-->
+    <div class="banniere" ;>
+        <img class="image-banniere" src="PHOTO/fond.jpg">
+        <img class="titre-banniere" src="PHOTO/titre.png">
+    </div>
+
+    <!--Bandeau navigation-->
+    <nav>
+        <ul class="ul-navigation">
+            <li class="li-navigation"><a href="index.html" id="info">Info</a></li>
+            <li class="li-navigation"><a href="allcards.html" id="allcards">Catalogue cartes</a></li>
+            <li class="li-navigation"><a href="battlegrounds.html" id="battlegrounds">Battlegrounds</a></li>
+            <li class="li-navigation"><a href="bdd.html" id="bdd">Données</a></li>
+        </ul>
+    </nav> 
+
+    <!--PAGE-->
+    <div id="accueil">
+        <div class="titre-index">
+            <h1>BIENVENUE SUR HEARTHSTONE API</h1>
+        </div>
+
+        <main>
+            <div>
+                <ul class="ul-presentation">
+                    <li class="li-titre"><h3>Hearthstone :</h3></li>
+                    <li class="li-texte">Hearthstone est un jeu de cartes en ligne développé et édité par Blizzard Entertainment. Il a été publié en 2014. Les joueurs incarnent des héros issus de l'univers Warcraft et s'affrontent en utilisant des decks de cartes.</li>
+                    <div><img class="image-top" src="PHOTO/image top2.png" /></div><li class="li-titre"><h3>Objectif du jeu :</h3></li>
+                    <li class="li-texte">L'objectif principal de Hearthstone est de réduire les points de vie (PV) de l'adversaire à zéro. Chaque joueur commence avec 30 PV, et le premier à épuiser les PV de l'adversaire remporte la partie.</li>
+                    <li class="li-titre"><h3>Les cartes :</h3></li>
+                    <li class="li-texte">Les cartes dans Hearthstone sont classées en plusieurs catégories : serviteurs, sorts, et armes. Les serviteurs sont des créatures qui combattent pour le joueur, les sorts sont des actions magiques, et les armes représentent des équipements utilisables par le héros.</li>
+                    <li class="li-titre"><h3>Les classes :</h3></li>
+                    <li class="li-texte">Il y a 11 classes jouables, chacune correspondant à une classe de Warcraft, comme le Mage, le Guerrier, le Chasseur, etc. Chaque classe a son propre ensemble de cartes et un pouvoir héroïque unique.</li>
+                    <li class="li-titre"><h3>Mécanique de jeu :</h3></li>
+                    <li class="li-texte">Chaque carte a un coût en mana, la ressource du jeu. Les joueurs commencent avec un cristal de mana et gagnent un cristal supplémentaire chaque tour. La gestion judicieuse du mana est essentielle pour jouer des cartes puissantes au bon moment.</li>
+                    <li class="li-titre"><h3>Modes de jeu :</h3></li>
+                    <li class="li-texte">Hearthstone propose plusieurs modes de jeu, notamment le mode « Standard » (avec un ensemble de cartes limité), le mode « Libre » (avec toutes les cartes disponibles), les modes solo « Adventures » ou encore le mode « Champs de bataille » dans lequel on récupère des serviteurs tout au long de la partie en essayant de crée la meilleur combinaison possible.</li>
+                </ul>
+                <ul class="ul-rareté">
+                    <li class="li-titre"><h3>Les raretés</h3></li>
+                    <colonne>
+                        <li class="li-rareté"><img class="image-rareté" src="PHOTO/Commune.png">Commune</li>
+                        <li class="li-rareté"><img class="image-rareté" src="PHOTO/Rare.png">Rare</li>
+                        <li class="li-rareté"><img class="image-rareté" src="PHOTO/Epique.png">Epique</li>
+                        <li class="li-rareté"><img class="image-rareté" src="PHOTO/Légendaire.png">Légendaire</li>
+                    </colonne>                        
+                </ul>
+            </div>   
+            <div>
+                <ul class="ul-rang">
+                    <li class="li-titre"><h3>Les differents rangs</h3></li>
+                    <li class="li-texte"><img class="image-rang" src="PHOTO/legende.png">Legende</li>
+                    <li class="li-texte"><img class="image-rang" src="PHOTO/diamant.png">Diamant</li>
+                    <li class="li-texte"><img class="image-rang" src="PHOTO/platine.png">Platine</li>
+                    <li class="li-texte"><img class="image-rang" src="PHOTO/or.png">Or</li>
+                    <li class="li-texte"><img class="image-rang" src="PHOTO/argent.png">Argent</li>
+                    <li class="li-texte"><img class="image-rang" src="PHOTO/bronze.png">Bronze</li>
+                </ul>
+            
+                <ul class="ul-liste">
+                    <li class="li-titre"><h3>Les types de cartes</h3></li>
+                    <colonne>
+                        <li class="li-photo"><img class="photo-home" src="PHOTO/serviteur.png">Serviteur</li>
+                        <li class="li-photo"><img class="photo-home" src="PHOTO/sort.png">Sort</li>
+                        <li class="li-photo"><img class="photo-home" src="PHOTO/arme.png">Arme</li>
+                    </colonne>
+                </ul>
+                <ul class="ul-liste2">
+                    <li class="li-titre"><h3>Les Heros</h3></li>
+                    <colonne>
+                        <li class="li-photo"><img class="photo-home" src="PHOTO/hero guerrier.webp">Guerrier</li>
+                        <li class="li-photo"><img class="photo-home" src="PHOTO/hero mage.png">Mage</li>
+                        <li class="li-photo"><img class="photo-home" src="PHOTO/hero chasseur.png">Chasseur</li>
+                    </colonne>
+                    <colonne>
+                        <li class="li-photo"><img class="photo-home" src="PHOTO/hero paladin.webp">Paladin</li>
+                        <li class="li-photo"><img class="photo-home" src="PHOTO/hero demoniste.webp">Demoniste</li>
+                        <li class="li-photo"><img class="photo-home" src="PHOTO/hero pretre.webp">Pretre</li>
+                    </colonne>
+                    <colonne>
+                        <li class="li-photo"><img class="photo-home" src="PHOTO/hero druide.webp">Druide</li>
+                        <li class="li-photo"><img class="photo-home" src="PHOTO/hero voleur.webp">Voleur</li>
+                        <li class="li-photo"><img class="photo-home" src="PHOTO/hero chaman.webp">Chaman</li>
+                    </colonne>
+                    <colonne>
+                        <li class="li-photo"><img class="photo-home" src="PHOTO/hero chevalier de la mort.webp">Chevalier de la mort</li>
+                        <li class="li-photo"><img class="photo-home" src="PHOTO/logo.png"></li>
+                        <li class="li-photo"><img class="photo-home" src="PHOTO/hero chasseur de demon.webp">Chasseur de demons</li>
+                    </colonne>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <!--Bas de page-->
+    <footer class="police-arial">
+        <div class="contact-block">
+            <div class="contact-logo">
+                <a href="https://www.instagram.com/HearthstoneAPI">
+                    <img src="Commun/insta.png">
+                </a>
+            </div>
+            <div class="contact-logo">
+                <a href="https://www.snapchat.com/HearthstoneAPI">
+                    <img src="Commun/snap.png">
+                </a>
+            </div>
+            <div class="contact-logo">
+                <a href="https://www.facebook.com/HearthstoneAPI">
+                    <img src="Commun/facebook.png">
+                </a>
+            </div>
+            <div class="contact-logo">
+                <a href="https://www.twitter.com/HearthstoneAPI">
+                    <img src="Commun/twitter.png">
+                </a>
+            </div>
+            <div class="contact">
+                <p1>©HearthstoneAPI</p1>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
